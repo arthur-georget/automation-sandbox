@@ -1,9 +1,9 @@
 # Automation Sandbox
 Java REST API automation server
 
-https://img.shields.io/badge/Java-orange?style=flat&logo=openjdk
-https://img.shields.io/badge/Maven-black?style=flat&logo=apachemaven&logoColor=blue
-https://img.shields.io/badge/junit-%23E33332?logo=junit5&logoColor=white
+[![JAVA](https://img.shields.io/badge/Java-orange?style=flat&logo=openjdk)](JAVA)
+[![MAVEN](https://img.shields.io/badge/Maven-black?style=flat&logo=apachemaven&logoColor=blue)](MAVEN)
+[![JUNIT](https://img.shields.io/badge/JUnit-%23E33332?logo=junit5&logoColor=white)](JUNIT)
 
 ## Dependencies
 * **Maven 17**
@@ -18,7 +18,7 @@ https://img.shields.io/badge/junit-%23E33332?logo=junit5&logoColor=white
 
 1. **Clone the repository :**
    ```bash
-   git clone [https://github.com/arthur-georget/automation-sandbox.git](https://github.com/arthur-georget/automation-sandbox.git)
+   git clone https://github.com/arthur-georget/automation-sandbox.git
    cd automation-sandbox/sandbox
    ```
 
