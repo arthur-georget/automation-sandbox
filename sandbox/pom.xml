@@ -53,5 +53,11 @@
             </plugin>
         </plugins>
     </build>
-
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/arthur-georget/automation-sandbox</url>
+        </repository>
+    </distributionManagement>
 </project>
