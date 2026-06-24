@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches: [ "preprod" ]
+  workflow_run:
+    workflows: ["Auto Merge to Preprod"]
+    types:
+      - completed
 
 jobs:
   build:
