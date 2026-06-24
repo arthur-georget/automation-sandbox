@@ -15,6 +15,7 @@ public class CalciferAPI {
         String githubStatus = "";
         try {
             githubStatus = calciferProcess.getGithubStatus();
+            calciferProcess.triggerAutoMerge("feat/process");
         } catch (IOException e){
             e.printStackTrace();
         }
