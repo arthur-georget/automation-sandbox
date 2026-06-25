@@ -9,22 +9,36 @@ import java.io.IOException;
 
 @Path("/codeReviewed")
 public class CalciferAPI {
+    private CalciferProcess calciferProcess;
+
+    // Default prod constructor
+    public CalciferAPI() {
+        this.calciferProcess = new CalciferProcess();
+    }
+
+    // Test constructor (to inject mock)
+    public CalciferAPI(CalciferProcess calciferProcess) {
+        this.calciferProcess = calciferProcess;
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public String codeReviewed(Map<String, Object> body) {
-        CalciferProcess calciferProcess = new CalciferProcess();
         String githubStatus = "";
-        String branchName = "preprod";
+        String branchName = "main";
+        
         if (body != null && body.containsKey("branch")) {
             branchName = (String) body.get("branch");
         }
+
         try {
-            githubStatus = calciferProcess.getGithubStatus();
-            calciferProcess.triggerAutoMerge(branchName);
+            githubStatus = this.calciferProcess.getGithubStatus();
+            this.calciferProcess.triggerAutoMerge(branchName); 
         } catch (IOException e){
             e.printStackTrace();
         }
-        return "HTTP request successfully received pour la branche " + branchName + ". Github status: " + githubStatus;
+        
+        return "HTTP request successfully received for " + branchName + " branch. Github status -> " + githubStatus;
     }
 }
